@@ -1,0 +1,8 @@
+<div data-ng-controller="BaseListCtrl as bs">
+    <div class="panel panel-primary" ng-repeat="(category, groupedExercises) in bs.exercises">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{category}}</h3>
+        </div>
+        <exercise-template item="groupedExercises"></exercise-template>
+    </div>
+</div>
