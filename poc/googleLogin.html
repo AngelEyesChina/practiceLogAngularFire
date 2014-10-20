@@ -1,0 +1,41 @@
+<html ng-app="sampleApp">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-beta.19/angular.min.js"></script>
+    <script src="https://cdn.firebase.com/js/client/1.1.2/firebase.js"></script>
+    <script src="https://cdn.firebase.com/js/simple-login/1.6.3/firebase-simple-login.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.8.2/angularfire.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module("sampleApp", ["firebase"]);
+
+         // let's create a re-usable factory that generates the $firebaseSimpleLogin instance
+        app.factory("simpleLogin", ["$firebaseSimpleLogin",
+            function($firebaseSimpleLogin) {
+                var ref = new Firebase("https://glowing-inferno-4287.firebaseio.com/");
+                return $firebaseSimpleLogin(ref);
+            }
+        ]);
+
+         // and use it in our controller
+        app.controller("AuthCtrl", ["$scope", "simpleLogin",
+            function($scope, simpleLogin) {
+                $scope.auth = simpleLogin;
+            }
+        ]);
+    </script>
+</head>
+
+<body>
+    <div ng-controller="AuthCtrl">
+        <div ng-show="auth.user">
+            <p>Hello, {{auth.user.displayName}}</p>
+            <button ng-click="auth.$logout()">Logout</button>
+        </div>
+        <div ng-hide="auth.user">
+            <p>Welcome, please log in.</p>
+            <button ng-click="auth.$login('google')">Login</button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -19,8 +19,9 @@ angular.module('practiceLog')
             category: "Ba Gua Zhang"
         }]
     })
-    .controller('BaseListCtrl', ['lodash', 'baseList',
-    function(_, baseList) {
-        this.exercises = _.groupBy(baseList.exercises, 'category');
+    .controller('BaseListCtrl', ['baseList',
+    function(baseList) {
+        this.exercises1 = baseList.exercises;
+        this.title = baseList.title;
     }
 ]);

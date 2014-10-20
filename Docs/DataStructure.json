@@ -1,31 +1,31 @@
 {
-  users: {
-    user1: {
-      name: "Alice"
-      lists: {
-        list1: true
+  "users": {
+    "user1": {
+      "name": "Alice",
+      "lists": {
+        "list1": "true"
       }
     },
-    user2: {
-      name: "Bob"
-      lists: {
-        list2: true
+    "user2": {
+      "name": "Bob",
+      "lists": {
+        "list2": "true"
       }
     }
   },
-  lists: {
-    list1: {
-      title: "Example",
-      userID: "user1",
-      exercises: {
-          exercise1: true
+  "lists": {
+    "list1": {
+      "title": "Example",
+      "userID": "user1",
+      "exercises": {
+          "exercise1": "true"
       }
     }
   },
-  exercises: {
-    exercise1: {
-      name: "Tai Ji Quan Form",
-      category: "Tai Ji Quan"
+  "exercises": {
+    "exercise1": {
+      "name": "Tai Ji Quan Form",
+      "category": "Tai Ji Quan"
     }
   }
 }

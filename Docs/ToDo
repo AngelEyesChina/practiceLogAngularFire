@@ -1,1 +1,18 @@
-continue creating the exerciseList directive
+1.
+create the tree creation page
+
+2.
+move all js files to one folder
+
+3.
+create the practice log  page
+
+4.
+check if angularFire is updated( a new login poc with the new login in code firebase at
+    https://www.firebase.com/docs/web/guide/user-auth.html#section-monitoring-authentication)
+    
+5.
+Remove "$firebaseSimpleLogin" from dependencies
+
+6.
+Remove <script src="https://cdn.firebase.com/js/simple-login/1.6.3/firebase-simple-login.js"></script> from index.html

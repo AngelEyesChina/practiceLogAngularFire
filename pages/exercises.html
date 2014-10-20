@@ -1,1 +1,9 @@
-exercises.html
+<form id="todo-form" ng-submit="addTodo()">
+    <input id="newExercise" placeholder="New exercise" ng-model="newExercise" autofocus>
+</form>
+<div data-ng-controller='exercisesCtrl as exCtrl'>
+    <exercise-list title="test" item="exCtrl.exercises"></exercise-list>
+
+
+    exercisesText: '{{exercisesText}}'
+</div>

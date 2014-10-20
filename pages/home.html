@@ -1,31 +1,7 @@
-<div data-ng-controller='AuthCtrl'>
-    <div data-ng-show='auth.user'>
-        <p>Hello, {{auth.user.displayName}}</p>
-    </div>
-</div>
 <div>
     Welcome to your Practice Log, here's an example for a practice list:
 </div>
 
-<div data-ng-controller='HomeCtrl as home'>
-    <h3>title1 {{home.baseList.title}}</h3>
-</div>
 <div data-ng-controller="BaseListCtrl as bs">
-    <div class="panel panel-primary" ng-repeat="(category, groupedExercises) in bs.exercises">
-        <div class="panel-heading">
-            <h3 class="panel-title">{{category}}</h3>
-        </div>
-        <div class="panel-body">
-            <ul class="list-group">
-                <li ng-repeat="exercise in groupedExercises" class="list-group-item">{{exercise.name}}</li>
-            </ul>
-        </div>
-    </div>
-</div>
-<div data-ng-controller='HomeCtrl as home'>
-    <h3>title {{home.baseList.title}}</h3>
-</div>
-directive: <hr />
-<div>
-    <exercise-list></exercise-list>
+    <exercise-list title="bs.title" item="bs.exercises1"></exercise-list>
 </div>
