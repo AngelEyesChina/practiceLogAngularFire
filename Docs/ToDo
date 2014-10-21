@@ -1,7 +1,7 @@
 1.
 create the tree creation page, 
     exercises.html 
-    exercisesCtrl.js
+    ExercisesCtrl.js
     
     *right now gets ALL exercises, fix to get only the user's specific list
 

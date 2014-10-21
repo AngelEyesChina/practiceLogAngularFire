@@ -1,4 +1,4 @@
-<div data-ng-controller='exercisesCtrl as exCtrl'>
+<div data-ng-controller='ExercisesCtrl as exCtrl'>
     <h3>Add a new exercise</h3>
     <form class="form-horizontal" role="form" ng-submit="addItem()">
         <div class="form-group" name="newExerciseForm">
@@ -19,9 +19,6 @@
             </div>
         </div>
     </form>
-
-
     <hr />
-
     <exercise-list grouped="exCtrl.exercises" title="<your list title>"></exercise-list>
 </div>

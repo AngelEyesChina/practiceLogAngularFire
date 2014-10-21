@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     var app = angular.module('practiceLog');
-    app.controller('exercisesCtrl', ['$firebase', 'lodash',
+    app.controller('ExercisesCtrl', ['$firebase', 'lodash',
         function($firebase, _) {
             var self = this;
             var exercisesRef = new Firebase("https://glowing-inferno-4287.firebaseio.com/exercises");
