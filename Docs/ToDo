@@ -1,5 +1,9 @@
 1.
-create the tree creation page
+create the tree creation page, 
+    exercises.html 
+    exercisesCtrl.js
+    
+    *right now gets ALL exercises, fix to get only the user's specific list
 
 2.
 move all js files to one folder
@@ -16,3 +20,13 @@ Remove "$firebaseSimpleLogin" from dependencies
 
 6.
 Remove <script src="https://cdn.firebase.com/js/simple-login/1.6.3/firebase-simple-login.js"></script> from index.html
+
+7. 
+remove code from google drive
+
+8.
+remove code from dropbox
+
+9.
+remove code from cloud 9 
+
