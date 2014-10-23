@@ -1,5 +1,5 @@
 'use strict';
-var app = angular.module('practiceLog', ['firebase', 'ngRoute', 'ngLodash']);
+var app = angular.module('practiceLog', ['firebase', 'ngRoute', 'ngLodash', 'mk.editablespan']);
 
 //route start
 app.config(function($routeProvider) {
