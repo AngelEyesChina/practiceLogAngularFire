@@ -4,7 +4,7 @@
     list.directive('exerciseList', function() {
         return {
             restrict: 'E',
-            templateUrl: "/templates/exercise-list.html",
+            templateUrl: "yourExercises/templates/exercise-list.html",
             scope: {
                 title: "@",
                 grouped: "="
@@ -14,10 +14,14 @@
     list.directive('exerciseTemplate', function() {
         return {
             restrict: 'E',
-            templateUrl: "/templates/exercise-template.html",
+            templateUrl: "yourExercises/templates/exercise-template.html",
             scope: {
-                item: "="
-            }
-        };
+                item: "=",
+            },
+            controller: 'ExercisesCtrl',
+            controllerAs: 'exercisesCtrl'
+//             link: function(scope, element, attrs, exercisesCtrl) {
+//             }
+        }
     });
 }());

@@ -8,17 +8,21 @@
             var rawExercises = $firebase(exercisesRef).$asArray();
             self.newExercise = {};
             self.addItem = addItem;
-            //for debugging, remove
-            self.rawExercises = rawExercises;
+            self.updateItem = updateItem;
+            
             //init
             //group exercises
-            self.exercises = _.groupBy(rawExercises, 'category');
+            prepareExercisesList();
             // each time the server sends records, re-group exercises
             rawExercises.$watch(function(event) {
-                self.exercises = _.groupBy(rawExercises, 'category');
+                prepareExercisesList();
             });
 
-            function addItem() {                
+            function prepareExercisesList() {             
+                self.exercises = _.groupBy(rawExercises, 'category');
+            }
+
+            function addItem() {
                 rawExercises.$add({
                     name: self.newExercise.name,
                     category: self.newExercise.category || null
@@ -26,7 +30,9 @@
             }
 
             function updateItem(item) {
-                
+                debugger; //1
+                var ref = item.$ref();
+                rawExercises.$save(item);
             }
             //  Alice - example user
         }

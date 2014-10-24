@@ -1,7 +1,7 @@
 <div class="panel-body">
     <ul class="list-group">
         <li ng-repeat="exercise in item" class="list-group-item">
-            <editablespan model="exercise.name" on-ready="saveItem(exercise)" 
+            <editablespan model="exercise.name" on-ready="exercisesCtrl.updateItem(exercise)" 
                           span-class="info" input-class="form-control" 
                           input-type="text">
             </editablespan>
