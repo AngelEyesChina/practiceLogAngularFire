@@ -1,38 +1,35 @@
 (function() {
     'use strict';
     var app = angular.module('practiceLog');
-    app.controller('ExercisesCtrl', ['$firebase', 'lodash',
-        function($firebase, _) {
+    app.controller('ExercisesCtrl', ['$firebase', 'lodash', 'consts',
+        function($firebase, _, consts) {
             var self = this;
-            var exercisesRef = new Firebase("https://glowing-inferno-4287.firebaseio.com/exercises");
-            var rawExercises = $firebase(exercisesRef).$asArray();
+            var exercisesRef = new Firebase(consts.fireBaseUrl + consts.exercisesUrl );
+            var usersRef = new Firebase(consts.fireBaseUrl + consts.usersUrl );
+            self.exercises= $firebase(exercisesRef).$asArray();
             self.newExercise = {};
             self.addItem = addItem;
             self.updateItem = updateItem;
-            
-            //init
-            //group exercises
-            prepareExercisesList();
-            // each time the server sends records, re-group exercises
-            rawExercises.$watch(function(event) {
-                prepareExercisesList();
-            });
+            self.isCollapsed = true;
 
-            function prepareExercisesList() {             
-                self.exercises = _.groupBy(rawExercises, 'category');
+            function getUserLists(userID){
+             //TODO   
+                
             }
-
+            
+            function getListExercises(listID){
+                //TODO   
+            }
+            
             function addItem() {
-                rawExercises.$add({
+                self.exercises.$add({
                     name: self.newExercise.name,
                     category: self.newExercise.category || null
                 });
             }
 
             function updateItem(item) {
-                debugger; //1
-                var ref = item.$ref();
-                rawExercises.$save(item);
+                self.exercises.$save(item);
             }
             //  Alice - example user
         }

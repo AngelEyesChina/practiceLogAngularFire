@@ -1,9 +1,20 @@
 1.
-create the tree creation page, 
+create the tree creation/editing(deleting?) page, 
     exercises.html 
     ExercisesCtrl.js
-    
+
     *right now gets ALL exercises, fix to get only the user's specific list
+    
+            function getUserLists(userID){
+             //TODO   
+                
+            }
+            
+            function getListExercises(listID){
+                //TODO   
+            }
+
+    
 
 2.
 move all js files to one folder
@@ -30,3 +41,5 @@ remove code from dropbox
 9.
 remove code from cloud 9 
 
+10.
+remove simpleLogin factory from AuthCtrl.js
