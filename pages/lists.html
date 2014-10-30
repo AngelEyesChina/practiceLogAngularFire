@@ -1,0 +1,13 @@
+<div class='table-responsive' data-ng-controller='ListsCtrl as listsCtrl'>
+    <table class="table table-bordered table-striped ">
+        <tr>
+            <th>List</th>
+        </tr>
+        <tr ng-repeat="list in listsCtrl.lists" ng-animate="'animate'">
+            <td>
+                <a href="#/list/{{list.$id}}/exercises">{{list.title}}</a>
+            </td>
+            <td>{{exercise.category}}</td>
+        </tr>
+    </table>
+</div>

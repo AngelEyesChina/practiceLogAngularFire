@@ -27,6 +27,9 @@
                     <a href="#exercises">Your Exercises</a> 
                 </li>
                 <li>
+                    <a href="#lists">Your lists</a> 
+                </li>
+                <li>
                     <a href="#log">Your Log</a> 
                 </li>
                 <li data-ng-controller="AuthCtrl" data-ng-show="auth.user" class="nav navbar-text bg-success">Logged in as {{auth.user.displayName}}</li>
@@ -64,6 +67,7 @@
     <script src="AuthCtrl.js"></script>
     <script src="baseList.js"></script>    
     <script src="yourExercises/ExercisesCtrl.js"></script>
+    <script src="yourExercises/ListsCtrl.js"></script>
     <!-- ToDo: lazy loading of modules using ocLazyLoad end -->
     <!-- ---------------------------------------------- -->
 </body>

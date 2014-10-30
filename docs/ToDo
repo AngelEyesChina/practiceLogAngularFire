@@ -1,3 +1,7 @@
+link:
+https://practicelogangularfire-c9-angeleyeschina1.c9.io/index.html#/
+
+
 1.
 create the tree creation/editing(deleting?) page, 
     exercises.html 
@@ -5,15 +9,7 @@ create the tree creation/editing(deleting?) page,
 
     *right now gets ALL exercises, fix to get only the user's specific list
     
-            function getUserLists(userID){
-             //TODO   
-                
-            }
-            
-            function getListExercises(listID){
-                //TODO   
-            }
-
+    connect this: https://practicelogangularfire-c9-angeleyeschina1.c9.io/list/#list1
     
 
 2.

@@ -3,7 +3,7 @@
     "user1": {
       "name": "Alice",
       "lists": {
-        "list1": "true"
+        "list1": "list1"
       }
     },
     "user2": {
