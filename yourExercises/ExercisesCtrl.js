@@ -9,43 +9,65 @@
             self.addItem = addItem;
             self.updateItem = updateItem;
             self.isCollapsed = true;
+            self.resetUserToAlice = resetUserToAlice;
 
 
             if ($routeParams.listID !== 'undefined' && $routeParams.listID !== '') {
-                getListExercises($routeParams.listID).then(function(list) {
-                    self.exercises = list;
+                var sync = dataUrlService.sync([dataUrlService.consts.lists, $routeParams.listID]);
+                self.list = sync.$asObject();
+                self.list.$watch(function() {
+                    self.exercises = getListExercises();
                 });
             }
 
-            function getListExercises(listID) {
-                var url = dataUrlService.getUrl([dataUrlService.consts.lists, listID, dataUrlService.consts.exercises]);
-                var ref = new Firebase(url);
-                var list = $firebase(ref).$asArray();
-                var promise = list.$loaded()
-                    .then(function() {
-                            var result = _.map(list, function(exerciseID) {
-                                var url = dataUrlService.getUrl([dataUrlService.consts.exercises, exerciseID.$id]);
-                                var ref = new Firebase(url);
-                                var obj = $firebase(ref).$asObject();
-                                return obj;
-                            });
-                            return result;
-                        },
-                        function(err) {
-                            console.log(err);
-                        });
-                return promise;
+            function getListExercises() {
+                var result = _.map(self.list.exercises, function(val, exerciseID) {
+                    var sync = dataUrlService.sync([dataUrlService.consts.exercises, exerciseID]);
+                    var obj = sync.$asObject();
+                    return obj;
+                });
+                return result;
             }
 
             function addItem() {
-                self.exercises.$add({
+                var sync = dataUrlService.sync([dataUrlService.consts.exercises]);
+                sync.$push({
                     name: self.newExercise.name,
                     category: self.newExercise.category || null
+                }).then(function(ref) {
+                    var name = ref.name(); // Key for the new ly created record
+
+                    self.list.exercises[name] = true;
+                    self.list.$save()
+                        .then(function(data) {
+                        });
+                }, function(err) {
+                    console.log(err);
                 });
             }
 
             function updateItem(item) {
-                self.exercises.$save(item);
+                item.$save();
+            }
+
+            //for dev:
+            function resetUserToAlice() {
+                var sync = dataUrlService.sync([dataUrlService.consts.lists, $routeParams.listID]);
+                sync.$set("exercises", {
+                    "exercise1": "exercise1"
+                });
+
+                var syncRoot = dataUrlService.sync([]);
+                syncRoot.$set(dataUrlService.consts.exercises, {
+                    "exercise1": {
+                        "category": "Tai Ji Quan",
+                        "name": "Tai Ji Quan Form"
+                    },
+                    "exercise2": {
+                        "category": "Xing Yi Quan",
+                        "name": "Five Elements"
+                    }
+                });
             }
         }
     ]);

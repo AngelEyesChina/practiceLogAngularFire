@@ -16,20 +16,23 @@
         });
     });
     //route end
-    app.service('dataUrlService', ['$firebase',
-        function() {
+    app.service('dataUrlService', ['$firebase','lodash',
+        function($firebase, _) {
             var fireBaseUrl = 'https://glowing-inferno-4287.firebaseio.com/';
             this.consts = {
                 'exercises': 'exercises',
                 'users': 'users',
                 'lists': 'lists'
             };
-            this.getUrl = getUrl;
+            this.sync = sync;
 
-            // returns the strings contcated, in order, with exactly one forward slash between each.
-            function getUrl(arrayOfArguments) {
-                var re = new RegExp("/+");
-                return fireBaseUrl + arrayOfArguments.join('/').replace(re, '/');
+            function sync(arrayOfArguments) {
+                var ref = new Firebase(fireBaseUrl);
+                _.forEach(arrayOfArguments, function(arg){
+                    ref = ref.child(arg);
+                });
+                var syncRes = $firebase(ref);
+                return syncRes;
             }
         }
     ]);

@@ -12,6 +12,9 @@ create the tree creation/editing(deleting?) page,
     connect this: https://practicelogangularfire-c9-angeleyeschina1.c9.io/list/#list1
     
 
+1.1 
+move to use ref.child and remove dataUrlService.getUrl as it's used now.
+
 2.
 move all js files to one folder
 

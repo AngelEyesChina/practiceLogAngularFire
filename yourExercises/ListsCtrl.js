@@ -11,15 +11,13 @@
             });
 
             function getUserLists(userID, callback) {
-                var url = dataUrlService.getUrl([dataUrlService.consts.users, userID, dataUrlService.consts.lists]);
-                var ref = new Firebase(url);
-                var listIDs = $firebase(ref).$asArray();
+                var sync = dataUrlService.sync([dataUrlService.consts.users, userID, dataUrlService.consts.lists]);
+                var listIDs = sync.$asArray();
                 var promise = listIDs.$loaded()
                     .then(function() {
                             var result = _.map(listIDs, function(listID) {
-                                var url = dataUrlService.getUrl([dataUrlService.consts.lists, listID.$id]);
-                                var ref = new Firebase(url);
-                                var obj = $firebase(ref).$asObject();
+                                var sync = dataUrlService.sync([dataUrlService.consts.lists, listID.$id]);
+                                var obj = sync.$asObject();
                                 return obj;
                             });
                             return result;

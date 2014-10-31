@@ -1,5 +1,9 @@
 <h1>Exercises</h1>
 <div data-ng-controller='ExercisesCtrl as exCtrl'>
+    <div>
+        for dev stage:
+        <a href='' ng-click='exCtrl.resetUserToAlice()'>reset alice user data</a>
+    </div>
     <button class="btn btn-default" ng-click="exCtrl.isCollapsed = !exCtrl.isCollapsed">Add a new exercise <span class="glyphicon glyphicon-plus-sign"></span>
     </button>
     <div collapse="exCtrl.isCollapsed">
@@ -26,7 +30,7 @@
             </form>
         </div>
     </div>
-    <h3>your list title</h3>
+    <h3>{{exCtrl.list.title}}</h3>
     <div class="form-inline">
         Click an exercise name to edit it.
         <input ng-model=" searchText " type="text " class="form-control " placeholder="Search ">
@@ -48,4 +52,3 @@
         </table>
     </div>
 </div>
-
