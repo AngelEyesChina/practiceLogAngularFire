@@ -1,19 +1,20 @@
 link:
 https://practicelogangularfire-c9-angeleyeschina1.c9.io/index.html#/
-
+ 
+0.5
+get data from services as extended objects.
 
 1.
-create the tree creation/editing(deleting?) page, 
-    exercises.html 
-    ExercisesCtrl.js
+create log page
 
-    *right now gets ALL exercises, fix to get only the user's specific list
-    
-    connect this: https://practicelogangularfire-c9-angeleyeschina1.c9.io/list/#list1
-    
+1.1
+allow deletion
 
-1.1 
-move to use ref.child and remove dataUrlService.getUrl as it's used now.
+1.2
+allow editing category names
+
+1.3
+add auto complete functionality to category names
 
 2.
 move all js files to one folder
@@ -42,3 +43,11 @@ remove code from cloud 9
 
 10.
 remove simpleLogin factory from AuthCtrl.js
+
+11.
+do the tutorial:
+    Build a Mobile App on Nitrous.IO with Ionic Framework, Firebase, and PhoneGap
+         http://blog.nitrous.io/2014/01/02/build-a-mobile-app-with-ionic-framework-firebase-and-phonegap-build.html 
+
+12.
+create the android app from web code

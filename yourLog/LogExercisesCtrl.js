@@ -1,7 +1,7 @@
 (function() {
     'use strict';
     var app = angular.module('practiceLog');
-    app.controller('ExercisesCtrl', ['$firebase', 'lodash', 'dataUrlService', '$routeParams',
+    app.controller('LogExercisesCtrl', ['$firebase', 'lodash', 'dataUrlService', '$routeParams',
         function($firebase, _, dataUrlService, $routeParams) {
             var self = this;
 
@@ -11,7 +11,8 @@
             self.isCollapsed = true;
             self.resetUserToAlice = resetUserToAlice;
 
-            if (typeof $routeParams.listID !== 'undefined' && $routeParams.listID !== '') {
+
+            if ($routeParams.listID !== 'undefined' && $routeParams.listID !== '') {
                 var sync = dataUrlService.sync([dataUrlService.consts.lists, $routeParams.listID]);
                 self.list = sync.$asObject();
                 self.list.$watch(function() {

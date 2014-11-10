@@ -28,4 +28,15 @@
       "category": "Tai Ji Quan"
     }
   }
+  "exercisesLog":{
+    "cycle1" : {
+      "startTime" : "timestamp for start",
+      "endTime" : "timestamp for end",
+      "details" : {
+        "exercise1" : "timestamp exercise1 checked"
+        "exercise2" : "timestamp exercise2 checked"
+        "exercise3" : "timestamp exercise3 checked"
+      }
+    }
+  }
 }
