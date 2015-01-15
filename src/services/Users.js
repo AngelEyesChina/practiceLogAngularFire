@@ -34,8 +34,8 @@
         });
     })
 
-    .factory("Users", function($firebase, dataUrlService, UserFactory) {
-        var ref = dataUrlService.getRef([dataUrlService.consts.users]);
+    .factory("Users", function($firebase, dataUrl, UserFactory) {
+        var ref = dataUrl.getRef([dataUrl.consts.users]);
 
         return {
             getAll: function() {

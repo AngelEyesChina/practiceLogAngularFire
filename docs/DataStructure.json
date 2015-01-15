@@ -1,7 +1,22 @@
 {
+  "exercises": {
+    "exercise1": {
+      "name": "Tai Ji Quan Form",
+      "category": "Tai Ji Quan"
+    }
+  },
+  "lists": {
+    "list1": {
+      "title": "Example",
+      "userID": "user1",
+      "exercises": {
+        "exercise1": "true"
+      }
+    }
+  },
   "users": {
-    "user1": {
-      "name": "Alice",
+    "google:104531750561360041649": {
+      "name": "Hanan",
       "lists": {
         "list1": "list1"
       }
@@ -13,29 +28,17 @@
       }
     }
   },
-  "lists": {
+  "exercisesLog": {
     "list1": {
-      "title": "Example",
-      "userID": "user1",
-      "exercises": {
-          "exercise1": "true"
+      "-JQjT7REctmFfOAoGI6d": {
+        "id": "exercise2",
+        "time": "timestamp exercise2 checked"
       }
-    }
-  },
-  "exercises": {
-    "exercise1": {
-      "name": "Tai Ji Quan Form",
-      "category": "Tai Ji Quan"
-    }
-  }
-  "exercisesLog":{
-    "cycle1" : {
-      "startTime" : "timestamp for start",
-      "endTime" : "timestamp for end",
-      "details" : {
-        "exercise1" : "timestamp exercise1 checked"
-        "exercise2" : "timestamp exercise2 checked"
-        "exercise3" : "timestamp exercise3 checked"
+    },
+    "list2": {
+      "-JQjT7REctmFfOAoGI6d": {
+        "id": "exercise3",
+        "time": "timestamp exercise3 checked"
       }
     }
   }

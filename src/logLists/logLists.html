@@ -1,13 +1,13 @@
 <h2>
-    Your Practice Log
+    Practice (Lists)
 </h2>
 
-<div class='table-responsive' data-ng-controller='ListsCtrl as listsCtrl'>
+<div class='table-responsive' data-ng-controller='LogListsCtrl as logLists'>
     <table class="table table-bordered table-striped ">
         <tr>
             <th>List</th>
         </tr>
-        <tr ng-repeat="list in listsCtrl.lists" ng-animate="'animate'">
+        <tr ng-repeat="list in logLists.lists" ng-animate="'animate'">
             <td>
                 <a href="#/log/{{list.$id}}/exercises">{{list.title}}</a>
             </td>

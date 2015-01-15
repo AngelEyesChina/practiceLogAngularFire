@@ -1,0 +1,31 @@
+<h2>
+    Practice (Exercises)
+</h2>
+
+<div data-ng-controller="LogExercisesCtrl as log">
+    <h2>{{log.list.title}}</h2>
+    <h4>(this is your list's title)</h4>
+    <div class="form-inline">
+        Click an exercise name to mark it as done.
+        <input ng-model="searchText" type="text" class="form-control" placeholder="Search">
+    </div>
+
+    <div class="table-responsive ">
+        <table class="table table-bordered table-striped ">
+            <tr>
+                <th>checked</th>
+                <th>Exercise</th>
+                <th>Category</th>
+            </tr>
+            <tr ng-repeat="exercise in log.exercises | orderBy: 'category' | filter:searchText" ng-animate="'animate'">
+                <td>
+                    <input type="checkbox" ng-model="value1">
+                </td>
+                <td>
+                    {{exercise.name}}
+                </td>
+                <td>{{exercise.category}}</td>
+            </tr>
+        </table>
+    </div>
+</div>

@@ -1,5 +1,10 @@
 link:
 https://practicelogangularfire-c9-angeleyeschina1.c9.io/index.html#/
+
+0.4
+ continue at 
+        function addItem() {
+    in exercisesctrl
  
 0.5
 get data from services as extended objects.
@@ -17,20 +22,17 @@ allow editing category names
 add auto complete functionality to category names
 
 2.
-move all js files to one folder
 
 3.
-create the practice log  page
+
 
 4.
-check if angularFire is updated( a new login poc with the new login in code firebase at
-    https://www.firebase.com/docs/web/guide/user-auth.html#section-monitoring-authentication)
-    
+
 5.
-Remove "$firebaseSimpleLogin" from dependencies
+
 
 6.
-Remove <script src="https://cdn.firebase.com/js/simple-login/1.6.3/firebase-simple-login.js"></script> from index.html
+
 
 7. 
 remove code from google drive
@@ -42,7 +44,7 @@ remove code from dropbox
 remove code from cloud 9 
 
 10.
-remove simpleLogin factory from AuthCtrl.js
+
 
 11.
 do the tutorial:
@@ -51,3 +53,12 @@ do the tutorial:
 
 12.
 create the android app from web code
+
+
+
+var isThisAPromise = function(value) {
+                    if (value && angular.isFunction(value.then)) {
+                        return true;
+                    }
+                    return false;
+                };

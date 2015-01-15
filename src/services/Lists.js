@@ -34,9 +34,9 @@
         });
     })
 
-    .factory("Lists", ['$firebase', 'dataUrlService', 'ListFactory', 'lodash', 'Users',
-        function($firebase, dataUrlService, ListFactory, _, Users) {
-            var ref = dataUrlService.getRef([dataUrlService.consts.lists]);
+    .factory("Lists", ['$firebase', 'dataUrl', 'ListFactory', 'lodash', 'Users',
+        function($firebase, dataUrl, ListFactory, _, Users) {
+            var ref = dataUrl.getRef([dataUrl.consts.lists]);
 
             return {
                 getAll: getAll,
