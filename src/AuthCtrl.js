@@ -24,7 +24,7 @@
             ///////////
 
             function login() {
-                Auth.$authWithOAuthPopup("google").then(function() {
+                Auth.$authWithOAuthRedirect("google").then(function() {
                     $location.path("/logLists");
                 });
             }

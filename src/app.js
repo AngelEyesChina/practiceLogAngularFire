@@ -47,6 +47,11 @@
         });
     });
     //route end
-    
     app.constant("moment", moment);
+    
+    app.filter('fromNow', function(moment) {
+                return function(date) {
+                    return moment(date).fromNow();
+                };
+});
 })();

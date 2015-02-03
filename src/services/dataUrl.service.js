@@ -10,7 +10,8 @@
                 'resolveRequireAuths': 'users',
                 'users': 'users',
                 'lists': 'lists',
-                'fireBaseUrl': 'https://glowing-inferno-4287.firebaseio.com/'
+                'exercisesLog' : 'exercisesLog',
+                'fireBaseUrl': 'https://glowing-inferno-4287.firebaseio.com/v2/'
             };
             self.sync = sync;
             self.getRef = getRef;
